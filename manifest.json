@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Black Bird",
+  "description": "This extension changes the web page background color to black and the font color to white to make it easy on the eye",
+  "version": "1.0",
+
+  "browser_action": {
+      "default_icon": {                    
+            "19": "16ic.png",           
+            "38": "32ic.png",
+            "128": "128ic.png"             
+        }
+       // "default_popup":"popup.html"
+  },
+  "permissions": ["tabs","storage","activeTab"],
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+  {
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": ["jquery-2.1.4.min.js", "content.js"]
+  }
+]
+}
